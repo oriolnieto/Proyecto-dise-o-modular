@@ -1,39 +1,72 @@
 package proyecto;
 
+import java.util.Scanner;
+
 public class main {
 	public static String[] hierba = { "Maria Juana", "Hierba de los bosques", "La seta feliz", "El oro verde" };
 	public static String[] origen = { "Mexico", "Andorra", "Marrueco", "Palestina" };
 	public static double[] precio = { 1.70, 4.20, 2.47, 1.33 };
+	public static String[] productos = new  String[4];
+	public static int[] cantidades = new  int[4];
 
 	public static void main(String[] args) {
+	Scanner scan = new Scanner(System.in);
 	String nombre, lugar;
 	double cantidad;
+	boolean seguir = true;
 	
-	System.out.println("Buenos dias! Que quieres hacer hoy?");
-	System.out.println("Usuario selecciona buscar por nombre");
-	buscar.porNombre(hierba);
-
-	System.out.println("Usuario selecciona buscar por origen");
-	buscar.porOrigen(origen,hierba);
-
-	System.out.println("Usuario selecciona ordenar por precio de menor a mayor");
-	// Codigo para ordenar de mayor a menor precio
-	System.out.println("Usuario selecciona ordenar por precio de menor a mayor");
-	// Codigo para ordenar de mayor a menor precio
-	System.out.println("Usuario selecciona varios productos para comprar");
-	// Codigo para seleccionar primer producto
-	nombre = "Hierba de los bosques";
-	cantidad = 3;
-	// Codigo para seleccionar segundo producto
-	nombre = "El oro verde";
-	cantidad = 1;
-	// Codigo para seleccionar tercer producto
-	nombre = "La seta feliz";
-	cantidad = 2.5;
-	System.out.println("Usuario elimina el segundo elemento de su carrito");
-	// Codigo para eliminar elemento del carrito
-	System.out.println("Usuario finaliza la compra");
-	// Codigo para finalizar la compra y que salga el total de la compra
+	System.out.println("Bienvenido a Green & Click!");
+	
+	while(seguir == true) {
+		
+		System.out.println("a. Buscar por nombre");
+		System.out.println("b. Buscar por origen");
+		System.out.println("c. Ordenar por precio de menor a mayor");
+		System.out.println("d. Ordenar por precio de mayor a menor");
+		System.out.println("e. Seleccionar Productos");
+		System.out.println("f. Eliminar Producto");
+		System.out.println("g. Calcular Total");
+		System.out.println("h. Salir");
+		String eleccion = scan.next();
+		
+		while(!(eleccion.equalsIgnoreCase("a") || eleccion.equalsIgnoreCase("b") || eleccion.equalsIgnoreCase("c") ||
+			  eleccion.equalsIgnoreCase("d") || eleccion.equalsIgnoreCase("e") || eleccion.equalsIgnoreCase("f") ||
+			  eleccion.equalsIgnoreCase("g") || eleccion.equalsIgnoreCase("h"))) {
+			System.out.println("a. Buscar por nombre");
+			System.out.println("b. Buscar por origen");
+			System.out.println("c. Ordenar por precio de menor a mayor");
+			System.out.println("d. Ordenar por precio de mayor a menor");
+			System.out.println("e. Seleccionar Productos");
+			System.out.println("f. Eliminar Producto");
+			System.out.println("g. Calcular Total");
+			System.out.println("h. Salir");
+			eleccion = scan.next();
+		}
+		
+		if(eleccion.equalsIgnoreCase("a")) {
+			buscar.porNombre(hierba);
+		}
+        if (eleccion.equalsIgnoreCase("b")) {
+        	buscar.porOrigen(origen, hierba);
+        }
+        if (eleccion.equalsIgnoreCase("c")) {
+        	ordenar.ordenarMenorMayor(precio, hierba);
+        }
+        if (eleccion.equalsIgnoreCase("d")) {
+        	ordenar.ordenarMayorMenor(precio, hierba);
+        }
+        if (eleccion.equalsIgnoreCase("e")) {
+        	carrito.seleccionarProductos(productos, cantidades);
+        }
+        if (eleccion.equalsIgnoreCase("f")) {
+        	carrito.eliminarProductos(productos, cantidades);
+        }
+        if (eleccion.equalsIgnoreCase("g")) {
+        	carrito.calcularTotal(precio, cantidades, productos, hierba);
+        }
+        if (eleccion.equalsIgnoreCase("h")) {
+            seguir = false;
+        }
+    }
 	}
-	//Funciones extra que considereis necesarias
-	}
+}
