@@ -50,10 +50,10 @@ public class main {
         	buscar.porOrigen(origen, hierba);
         }
         if (eleccion.equalsIgnoreCase("c")) {
-        	ordenar.ordenarMenorMayor(precio, hierba);
+        	ordenar.menorMayor(precio, hierba);
         }
         if (eleccion.equalsIgnoreCase("d")) {
-        	ordenar.ordenarMayorMenor(precio, hierba);
+        	ordenar.mayorMenor(precio, hierba);
         }
         if (eleccion.equalsIgnoreCase("e")) {
         	carrito.seleccionarProductos(productos, cantidades);

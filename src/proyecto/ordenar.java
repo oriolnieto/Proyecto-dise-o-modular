@@ -1,7 +1,7 @@
 package proyecto;
 
 public class ordenar {
-	public static void ordenarMenorMayor(double[] precio, String[] hierba) {
+	public static void menorMayor(double[] precio, String[] hierba) {
 	       for (int i = 0; i < precio.length - 1; i++) {
 	           for (int j = i + 1; j < precio.length; j++) {
 	               if (precio[i] > precio[j]) {
@@ -24,7 +24,7 @@ public class ordenar {
 	       System.out.println();
 	   }
 
-	public static void ordenarMayorMenor(double[] precio, String[] hierba) {
+	public static void mayorMenor(double[] precio, String[] hierba) {
 	       for (int i = 0; i < precio.length - 1; i++) {
 	           for (int j = i + 1; j < precio.length; j++) {
 	               if (precio[i] < precio[j]) {
