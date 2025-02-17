@@ -56,7 +56,7 @@ public class main {
         	ordenar.mayorMenor(precio, hierba);
         }
         if (eleccion.equalsIgnoreCase("e")) {
-        	carrito.seleccionarProductos(productos, cantidades);
+        	carrito.seleccionarProductos(productos, cantidades, hierba);
         }
         if (eleccion.equalsIgnoreCase("f")) {
         	carrito.eliminarProductos(productos, cantidades);
