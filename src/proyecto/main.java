@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class main {
 	public static String[] hierba = { "Maria Juana", "Hierba de los bosques", "La seta feliz", "El oro verde" };
-	public static String[] origen = { "Mexico", "Andorra", "Marrueco", "Palestina" };
+	public static String[] origen = { "Mexico", "Andorra", "Marruecos", "Palestina" };
 	public static double[] precio = { 1.70, 4.20, 2.47, 1.33 };
 	public static String[] productos = new  String[4];
 	public static int[] cantidades = new  int[4];
@@ -44,10 +44,10 @@ public class main {
 		}
 		
 		if(eleccion.equalsIgnoreCase("a")) {
-			buscar.porNombre(hierba);
+			buscar.porNombre(hierba, origen, precio);
 		}
         if (eleccion.equalsIgnoreCase("b")) {
-        	buscar.porOrigen(origen, hierba);
+        	buscar.porOrigen(origen, hierba, precio);
         }
         if (eleccion.equalsIgnoreCase("c")) {
         	ordenar.menorMayor(precio, hierba);
@@ -63,6 +63,7 @@ public class main {
         }
         if (eleccion.equalsIgnoreCase("g")) {
         	carrito.calcularTotal(precio, cantidades, productos, hierba);
+        	seguir = false;
         }
         if (eleccion.equalsIgnoreCase("h")) {
             seguir = false;
