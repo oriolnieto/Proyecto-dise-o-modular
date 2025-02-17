@@ -6,8 +6,8 @@ public class main {
 	public static String[] hierba = { "Maria Juana", "Hierba de los bosques", "La seta feliz", "El oro verde" };
 	public static String[] origen = { "Mexico", "Andorra", "Marruecos", "Palestina" };
 	public static double[] precio = { 1.70, 4.20, 2.47, 1.33 };
-	public static String[] productos = new  String[4];
-	public static int[] cantidades = new  int[4];
+	public static String[] productos = new  String[4]; // Definimos los productos maximos a seleccionar como 4, ya que son los que disponemos.
+	public static int[] cantidades = new  int[4]; // Lo mismo con las cantidades.
 
 	public static void main(String[] args) {
 	Scanner scan = new Scanner(System.in);
@@ -27,11 +27,11 @@ public class main {
 		System.out.println("f. Eliminar Producto");
 		System.out.println("g. Calcular Total");
 		System.out.println("h. Salir");
-		String eleccion = scan.next();
+		String eleccion = scan.next(); // Pedir opcion al usuario.
 		
 		while(!(eleccion.equalsIgnoreCase("a") || eleccion.equalsIgnoreCase("b") || eleccion.equalsIgnoreCase("c") ||
 			  eleccion.equalsIgnoreCase("d") || eleccion.equalsIgnoreCase("e") || eleccion.equalsIgnoreCase("f") ||
-			  eleccion.equalsIgnoreCase("g") || eleccion.equalsIgnoreCase("h"))) {
+			  eleccion.equalsIgnoreCase("g") || eleccion.equalsIgnoreCase("h"))) {  // Si su respuesta no es igual a ninguna de las opciones, volver a pedir.
 			System.out.println("a. Buscar por nombre");
 			System.out.println("b. Buscar por origen");
 			System.out.println("c. Ordenar por precio de menor a mayor");
@@ -43,7 +43,7 @@ public class main {
 			eleccion = scan.next();
 		}
 		
-		if(eleccion.equalsIgnoreCase("a")) {
+		if(eleccion.equalsIgnoreCase("a")) { // Por cada opcion, asignar su funcion correspondiente.
 			buscar.porNombre(hierba, origen, precio);
 		}
         if (eleccion.equalsIgnoreCase("b")) {
@@ -66,7 +66,7 @@ public class main {
         	seguir = false;
         }
         if (eleccion.equalsIgnoreCase("h")) {
-            seguir = false;
+            seguir = false;   // Damos valor negativo a la boolean para salir.
         }
     }
 	}
