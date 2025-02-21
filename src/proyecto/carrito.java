@@ -43,6 +43,8 @@ public class carrito {
 
     public static void eliminarProductos(String[] productos, int[] cantidades) {
         Scanner scan = new Scanner(System.in);
+        boolean eliminado = false;
+        
         System.out.println("Que producto quieres eliminar?"); // Pedimos producto a eliminar.
         String producto = scan.nextLine();
 
@@ -51,8 +53,14 @@ public class carrito {
                 productos[i] = null; // Le damos valor nulo a la array de productos.
                 cantidades[i] = 0; // Fijamos su cantidad a 0.
                 System.out.println("Producto eliminado!");
+                eliminado = true;
             }
         }
+        
+        if(eliminado == false) {
+            System.out.println("Producto no encontrado.");
+            }
+        
         System.out.println();
     }
 
