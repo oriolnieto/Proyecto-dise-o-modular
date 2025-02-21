@@ -2,7 +2,7 @@ package proyecto;
 
 public class ordenar {
 	public static void menorMayor(double[] precio, String[] hierba) {
-	       for (int i = 0; i < precio.length - 1; i++) {
+	       for (int i = 0; i < precio.length; i++) {
 	           for (int j = i + 1; j < precio.length; j++) {
 	               if (precio[i] > precio[j]) { // Si el precio[i] es mas grande que el que tenemos almacenado en j.
 	                   double temporalPrecio = precio[i];
@@ -25,7 +25,7 @@ public class ordenar {
 	   }
 
 	public static void mayorMenor(double[] precio, String[] hierba) {
-	       for (int i = 0; i < precio.length - 1; i++) {
+	       for (int i = 0; i < precio.length; i++) {
 	           for (int j = i + 1; j < precio.length; j++) {
 	               if (precio[i] < precio[j]) {
 	                   double temporalPrecio = precio[i];
